@@ -8,3 +8,9 @@ Install :
 1. Clone https://github.com/gaoethan/vision_opencv/tree/ros2_cv_bridge in your workspace
 2. Clone this repository
 3. Use ament to build the items in the workspace 
+
+TODO :
+ - Add Test
+ - Create Documention
+ - Add CI
+ - Implement a configuration files
