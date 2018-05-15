@@ -35,9 +35,5 @@ install(TARGETS
   ip_cam_node
   DESTINATION lib/${PROJECT_NAME})
 
-install(
-  DIRECTORY include/
-  DESTINATION include
-)
 
 ament_package()
