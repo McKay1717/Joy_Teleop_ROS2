@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(ip_cam_ros2)
+project(joy_teleop_ros2)
 
 # Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
@@ -15,24 +15,22 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
-find_package(OpenCV REQUIRED)
-find_package(cv_bridge REQUIRED)
+find_package(geometry_msgs REQUIRED)
+
 
 include_directories(include)
 ament_export_include_directories(include)
 
 # A stand alone node which consumes images and displays them using OpenCV.
-add_executable(ip_cam_node
-  src/ip_cam_node.cpp
-  src/CurrentTime.cpp)
-ament_target_dependencies(ip_cam_node
+add_executable(joy_teleop_node
+  src/joy_teleop_node.cpp)
+ament_target_dependencies(joy_teleop_node
   "rclcpp"
   "sensor_msgs"
-  "OpenCV"
-  "cv_bridge")
+  "geometry_msgs")
 
 install(TARGETS
-  ip_cam_node
+  joy_teleop_node
   DESTINATION lib/${PROJECT_NAME})
 
 
